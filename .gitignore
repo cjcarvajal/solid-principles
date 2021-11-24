@@ -3,6 +3,7 @@
 
 # Spring generated files
 .classpath
+bin/
 .project
 .settings/
 gradle*
