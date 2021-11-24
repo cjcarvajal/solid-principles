@@ -1,3 +1,13 @@
+#Mac generated files
+.DS_Store
+
+# Spring generated files
+.classpath
+.project
+.settings/
+gradle*
+settings.gradle
+
 # Compiled class file
 *.class
 
@@ -21,3 +31,4 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/.gradle/
