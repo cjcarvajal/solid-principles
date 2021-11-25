@@ -12,6 +12,7 @@ public class WebSocialNetworkManager {
 	}
 
 	public void post(String message) {
+
 		System.out.println("******************Social Timeline**************************");
 		sqlAndWebManager.show(message);
 		sqlAndWebManager.store(message);

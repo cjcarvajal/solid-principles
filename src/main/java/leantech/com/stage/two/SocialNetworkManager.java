@@ -12,6 +12,9 @@ public class SocialNetworkManager {
 	}
 
 	public void post(String message) {
+		if (message.isEmpty())
+			throw new RuntimeException();
+		
 		System.out.println("******************Social Timeline**************************");
 		sqlAndWebManager.show(message);
 		sqlAndWebManager.store(message);

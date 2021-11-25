@@ -10,11 +10,17 @@ public class Executor {
 		WebSocialNetworkManager webManager = new WebSocialNetworkManager();
 		webManager.post("This web UI is really cool");
 		webManager.refreshTimeline(getInstant());
-		
+
 		SMSSocialNetworkManager smsManager = new SMSSocialNetworkManager();
 		smsManager.post("I love the simplicity of sms");
 		webManager.refreshTimeline(getInstant());
-		
+
+		SocialNetworkManager genericManager = new SocialNetworkManager();
+
+		String emptyMessage = "";
+		smsManager.post(emptyMessage);
+		genericManager.post(emptyMessage);
+
 	}
 
 	private static Timestamp getInstant() {

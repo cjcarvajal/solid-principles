@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 
 public class NoSQLRepository {
 
@@ -32,6 +31,9 @@ public class NoSQLRepository {
 
 		String timestampString = since.toString();
 		int index = Integer.valueOf(timestampString.substring(timestampString.length() - 1));
+
+		index = index < messagesList.size() ? index : 0;
+
 		return messagesList.subList(messagesList.size() - index, messagesList.size());
 	}
 
