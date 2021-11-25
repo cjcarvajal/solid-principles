@@ -1,17 +1,28 @@
 package leantech.com.stage.one;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SocialNetworkManager {
 
-	public String post(String message) {
-		return "";
+	private SQLAndWebManager sqlAndWebManager;
+
+	public SocialNetworkManager() {
+		sqlAndWebManager = new SQLAndWebManager();
 	}
 
-	public List<String> refreshTimeline(Timestamp since) {
-		return new ArrayList<>();
+	public void post(String message) {
+		System.out.println("******************Social Timeline**************************");
+		sqlAndWebManager.show(message);
+		sqlAndWebManager.store(message);
+		System.out.println("******************Social Timeline**************************");
+	}
+
+	public void refreshTimeline(Timestamp since) {
+		System.out.println("******************Social Timeline**************************");
+		List<String> readSince = sqlAndWebManager.readSince(since);
+		readSince.stream().forEach(m -> sqlAndWebManager.show(m));
+		System.out.println("******************Social Timeline**************************");
 	}
 
 }

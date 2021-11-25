@@ -3,9 +3,11 @@ package leantech.com.stage.one;
 import java.sql.Timestamp;
 import java.util.List;
 
-public interface IRepositoryManager {
+public interface IRepositoryAndUIManager {
+	
+	void show(String message);
 
-	void store(String message);
+	String store(String message);
 
 	List<String> readSince(Timestamp since);
 
